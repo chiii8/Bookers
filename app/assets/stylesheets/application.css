@@ -54,6 +54,9 @@ thead th {
 tbody {
   display: block;
   margin: 3px;
+  font-size: 15px;
+  font-family: sans-serif;
+  color: #404048;
 }
 
 body h2 {
@@ -69,4 +72,13 @@ body h4 {
 .btan {
   display: block;
   padding-top: 10px;
+}
+
+.edit {
+  margin-right: 5px;
+  padding-right: 5px;
+}
+
+.back {
+  margin-left: 5px;
 }
