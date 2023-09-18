@@ -1,0 +1,47 @@
+<body>
+  <h1>Books</h1>
+    <table>
+      <thead>
+        <tr><!-- 見出し-->
+          <th>Title</th>
+          <th>Body</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+      
+      <tbody>
+        <tr>
+          <td><!-- title -->
+            a
+          </td>
+          
+          <td><!-- body -->
+            
+          </td>
+          
+          <td><!-- リンク先のurl -->
+            <a href="/">Show</a>
+            <a href="/">Edit</a>
+            <a href="/">Destroy</a>
+          </td>
+        </tr>
+      </tbody>
+      
+    </table>
+    
+    <h2>New book</h2>
+
+    <%= form_with model: @book do |f| %>
+    <h4>Title</h4>
+    <%= f.text_field :title %>
+  
+    <h4>Body</h4>
+    <%= f.text_area :body %>
+    
+    <div class="btan">
+    <%= f.submit 'Create book' %>
+    </div>
+    <% end %>
+    
+  </body>
+</html>
