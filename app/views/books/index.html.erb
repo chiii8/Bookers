@@ -10,41 +10,24 @@
       </thead>
       
       <tbody>
-        <!-- each文が入る -->
-        <div class="wrapper">
+        <% @books.each do |book| %>
         <tr>
           <td><!-- title -->
-            a
+            <%= book.title %>
           </td>
-          
           <td><!-- body -->
-            d
+            <%= book.body %>
           </td>
-          
-          <td><!-- リンク先のurlとりあえず -->
-            <a href="/books/show">Show</a>
-            <a href="/books/edit">Edit</a>
-            <a href="/">Destroy</a>
+          <td><!-- リンク先のurl -->
+            <%= link_to "Show", book_path(book.id) %>
+            <%= link_to "Edit", edit_book_path(book.id) %>
+            <%= link_to "Destroy", book_path(book.id), method: :delete, "data-confirm" => "Are you sure?" %>
           </td>
         </tr>
+        <% end %>
         </div>
       </tbody>
-      
     </table>
-    
-    <h2>New book</h2>
-
-    <%= form_with model: @book do |f| %>
-    <h4>Title</h4>
-    <%= f.text_field :title %>
-  
-    <h4>Body</h4>
-    <%= f.text_area :body %>
-    
-    <div class="btan">
-    <%= f.submit 'Create book' %>
-    </div>
-    <% end %>
     
   </body>
 </html>

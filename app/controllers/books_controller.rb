@@ -2,12 +2,20 @@ class BooksController < ApplicationController
   
   def new
     @book = Book.new
+    byebug
   end
   
   def create
-    book = Book.new(book_params)
-    book.save
-    redirect_to '/books#show'
+    @book = Book.new(book_params)
+    if 
+      @book.save
+      flash[:notive] = "Book was successfully created."
+      redirect_to book_path(@book.id)
+    else
+      @book = Book.new(title: nil, body: nil)
+      @book.valid?
+      @book.errors.full_messages => ["Title can't be blank", "Body can't be blank"]
+    end
   end
 
   def index
@@ -15,11 +23,11 @@ class BooksController < ApplicationController
   end
 
   def show
-    
+    @book = Book.find(params[:id])
   end
 
   def edit
-    
+    @book = Book.find(params[:id])
   end
   
   def update
@@ -35,8 +43,7 @@ class BooksController < ApplicationController
   end
   
   private
-  
   def book_params
-    params.permit(:title, :body)
+    params.require(@book).permit(:title, :body)
   end
 end
