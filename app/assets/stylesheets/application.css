@@ -19,16 +19,22 @@
   box-sizing: border-box;
 }
 
+.text-center {
+  text-align: center;
+}
+
 body {
   background-color: #fff;
   color: #000;
   font-size: 15px;
   margin: 30px;
-  font-family: "Arial Black";
+  font-family: "Arial Black", "sans-serif";
+  line-height: 17px;
 }
 
 body p {
   margin: 30px;
+  font-family: sans-serif;
 }
 
 body br {
@@ -46,17 +52,31 @@ body h1 {
   margin: 30px 0 15px;
 }
 
+table {
+  display: table;
+  table-layout: auto;
+  width: 50%;
+  border-spacing: 10px;
+}
+
 thead th {
+  padding-bottom: 5px;
   font-size: 13px;
-  padding-right: 20px;
+  padding: 0 60px;
 }
 
 tbody {
-  display: block;
-  margin: 3px;
-  font-size: 15px;
+  font-size: 13px;
   font-family: sans-serif;
-  color: #404048;
+}
+
+table td{
+  white-space: nowrap;
+  padding: 0 15px;
+}
+
+.action {
+  padding: 2px;
 }
 
 body h2 {
@@ -64,21 +84,36 @@ body h2 {
   margin: 10px 0;
 }
 
-body h4 {
+.title-form, .body-form {
   font-family: sans-serif;
   font-weight: lighter;
 }
 
-.btan {
+.btn {
   display: block;
   padding-top: 10px;
+  margin-bottom: 10px;
 }
 
-.edit {
-  margin-right: 5px;
-  padding-right: 5px;
+.show-title, .show-body {
+  font-size: 13px;
+  font-family: sans-serif;
 }
 
-.back {
-  margin-left: 5px;
+.nav-link {
+  font-family: sans-serif;
+  font-size: 13px;
+  margin: 0 3px;
+}
+
+.flash-message {
+  color: green;
+  font-family: sans-serif;
+}
+
+.error-wrap {
+  display: block;
+  font-family: sans-serif;
+  color: red;
+  margin: 10px;
 }
